@@ -1,0 +1,7 @@
+.prodIdImg{
+    min-width: 300px;
+    max-width: 100%;
+}
+.ImgDetactive{
+    border:2px solid orangered;
+}

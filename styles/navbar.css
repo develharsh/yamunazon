@@ -1,0 +1,16 @@
+.navbar-main {
+	/*position:fixed;
+    width: 100%;*/
+}
+.navBrandImg {
+	border-radius: 50%;
+	object-fit: cover;
+}
+.navProfileImg {
+	object-fit: cover;
+	border-radius: 50%;
+	transform: translateY(0px);
+}
+.navTextMain {
+	font-family: "Bree Serif", serif;
+}
