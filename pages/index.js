@@ -9,11 +9,9 @@ const Home = ({ properties }) => {
 					<img src={product.images[0]} className="card-img-top" alt="..." />
 					<div className="card-body">
 						<h5 className="card-title">{product.title}</h5>
-						<p className="card-text">Rs. {product.price}</p>
+						<p className="card-text">₹ {product.price}</p>
 						<Link href={`/product/${product._id}`}>
-							<a target="_blank" className="btn btn-primary">
-								View Product
-							</a>
+							<a target="_blank" className="stretched-link"></a>
 						</Link>
 					</div>
 				</div>
@@ -37,13 +35,7 @@ const Home = ({ properties }) => {
 export async function getServerSideProps(context) {
 	const ress = await fetch(`${process.env.BASE_URL}/api/products`);
 	const { req, res } = context;
-	let data;
-	try {
-		data = await ress.json();
-	} catch (err) {
-		res.writeHead(302, { Location: "/" });
-		res.end();
-	}
+	const data = await ress.json();
 	return {
 		props: { properties: data }, // will be passed to the page component as props
 	};

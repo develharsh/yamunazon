@@ -9,6 +9,16 @@ const NavBar = () => {
 	const router = useRouter();
 	const { state, dispatch } = useContext(DataContext);
 	const { auth, cart } = state;
+	/*AUTH AREA START*/
+	let normalU = false,
+		adU;
+	const whoU = cookie.get("whoU");
+	if (whoU) {
+		const powerU = whoU.split(",");
+		if (powerU[1] && powerU[1] === "normal") normalU = true;
+		else if (powerU[1] && powerU[1] === "addmin") adU = true;
+	}
+	/*AUTH AREA END*/
 	const isActive = (r) => {
 		if (r === router.pathname) {
 			return " active";
@@ -26,7 +36,7 @@ const NavBar = () => {
 	const loggedRouter = () => {
 		return (
 			<li className="nav-item dropdown">
-				<span style={{marginLeft:'8px'}}></span>
+				<span style={{ marginLeft: "8px" }}></span>
 				<button
 					className="btn btn-danger"
 					onClick={(e) => {
@@ -45,13 +55,15 @@ const NavBar = () => {
 				style={{ position: "fixed", width: "100%", zIndex: 3 }}
 			>
 				<div className="container-fluid">
-					{/*<Image
-						src="/favicon.ico"
-						width="30"
-						height="30"
-						className="navBrandImg"
-						alt="dfd"
-					/>*/}
+					{
+						<Image
+							src="/favicon.ico"
+							width="30"
+							height="30"
+							className="navBrandImg"
+							alt="dfd"
+						/>
+					}
 					<span style={{ minWidth: "3px" }}></span>
 					<Link href="/">
 						<a className="navbar-brand navTextMain">Yamunazon</a>
@@ -72,6 +84,30 @@ const NavBar = () => {
 						id="navbarSupportedContent"
 					>
 						<ul className="navbar-nav">
+							{adU && (
+								<>
+									<li className="nav-item">
+										<Link href="/admin/products">
+											<a className="nav-link">Admin-Products</a>
+										</Link>
+									</li>
+									<li className="nav-item">
+										<Link href="/admin/categories">
+											<a className="nav-link">Admin-Categories</a>
+										</Link>
+									</li>
+									<li className="nav-item">
+										<Link href="/admin/users">
+											<a className="nav-link">Admin-Users</a>
+										</Link>
+									</li>
+								</>
+							)}
+							<li className="nav-item" hidden>
+								<Link href="/My_Cart">
+									<a className="nav-link">Categories</a>
+								</Link>
+							</li>
 							<li className="nav-item">
 								<Link href="/My_Cart">
 									<a className={"nav-link" + isActive("/My_Cart")}>

@@ -16,13 +16,13 @@ const Login = async (req, res) => {
 
 		if (doMatch) {
 			const token = jwt.sign(
-				{ userId: user._id },
+				{ power: user.power },
 				process.env.ACCESS_TOKEN_SECRET,
 				{
 					expiresIn: "15m",
 				}
 			);
-			res.status(202).json({ tokenAuth: token, whoU: user });
+			res.status(202).json({ tokenAuth: token, whoU: [user._id, user.power] });
 		} else {
 			return res.status(400).json({ fail: "No such user found" });
 		}

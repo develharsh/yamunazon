@@ -48,14 +48,14 @@ const Productt = ({ product }) => {
 								disabled={!product.available}
 								onClick={(e) => dispatch(addToCart(product, cart))}
 							>
-								Add to Cart
+								<i className="fas fa-cart-plus"></i> Add to Cart
 							</button>
 							<span style={{ marginLeft: "33px" }}></span>
 							<Link
 								href={`https://wa.me/+918279766773?text=Hello,%20I%20want%20to%20ask%20about%20the%20product:%20${product._id}`}
 							>
 								<a target="_blank" className="btn btn-success">
-									Ask on WhatsApp
+									<i className="fab fa-whatsapp"></i> Ask on WhatsApp
 								</a>
 							</Link>
 						</div>
@@ -63,6 +63,7 @@ const Productt = ({ product }) => {
 							<h6 className="text-danger">Sorry, Currently not available</h6>
 						)}
 						<hr></hr>
+						<h6>₹ {product.price}</h6>
 						<h3>Description</h3>
 						<p>{product.description}</p>
 					</div>

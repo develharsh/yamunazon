@@ -1,5 +1,5 @@
 import connectDB from "../../utils/connectDB";
-import Product from "../../models/ProductModel";
+import Category from "../../models/catModel";
 
 connectDB();
 
@@ -15,16 +15,19 @@ const PropertyApi = async (req, res) => {
 };
 
 const getAllProps = async (req, res) => {
-	const properties = await Product.find();
-	res.status(200).json(properties);
+	const categories = await Category.find();
+	res.status(200).json(categories);
 };
 
 const saveProperty = async (req, res) => {
 	try {
-		const product = await new Product(req.body).save();
+		const { title } = req.body;
+		const product = await new Category({
+			title,
+		}).save();
 		res.status(201).json({ success: "Success" });
 	} catch (error) {
-		return res.status(422).json({ error: "Something went wrong in Creating" });
+		return res.status(422).json({ fail: "Something went wrong in Creating" });
 	}
 };
 

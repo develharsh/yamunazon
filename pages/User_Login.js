@@ -68,8 +68,8 @@ const User_Login = () => {
 		});
 
 		cookie.set("whoU", whoU);
-        cookie.set("tokenAuth", tokenAuth);
-        router.push("/My_Cart");
+		cookie.set("tokenAuth", tokenAuth);
+		router.push("/My_Cart");
 	};
 	return (
 		<div>
@@ -86,6 +86,8 @@ const User_Login = () => {
 						type="text"
 						className="form-control"
 						name="phone"
+						maxLength="10"
+						minLength="10"
 						value={phone}
 						onChange={handleChangeInput}
 						id="exampleInputEmail1"

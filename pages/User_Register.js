@@ -96,6 +96,7 @@ const User_Register = () => {
 					<input
 						type="text"
 						maxLength="10"
+						minLength="10"
 						className="form-control"
 						name="phone"
 						value={phone}

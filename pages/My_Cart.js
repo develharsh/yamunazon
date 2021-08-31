@@ -121,7 +121,7 @@ const My_Cart = () => {
 								handleSubmit(e);
 							}}
 						>
-							Check Out
+							<i className="far fa-credit-card"></i> Check Out
 						</button>
 					</form>
 				</div>
