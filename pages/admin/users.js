@@ -20,7 +20,7 @@ const Users = ({ users }) => {
 			<Head>
 				<title>Admin Users | Yamunazon.com</title>
 			</Head>
-			<div className="container">
+			<div className="container" style={{overflow:'auto'}}>
 				<table className="table table-striped">
 					<thead>
 						<tr>

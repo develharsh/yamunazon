@@ -5,6 +5,7 @@ import { DataContext } from "../store/GlobalState";
 //import $ from 'jquery';
 import cookie from "js-cookie";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 const User_Login = () => {
 	const router = useRouter();
@@ -71,6 +72,78 @@ const User_Login = () => {
 		cookie.set("tokenAuth", tokenAuth);
 		router.push("/My_Cart");
 	};
+	const handleForgotEmail = async (phoneofUser) => {
+		Swal.fire("Please Wait...");
+		//console.log(phoneofUser);
+		await fetch(`${process.env.BASE_URL}/api/specificUser`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				phone: phoneofUser,
+			}),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.user.length !== 0) {
+					const { name, email, _id } = data.user[0];
+					//console.log(email)
+					Email.send({
+						Host: "smtp.gmail.com",
+						Username: "singhharshvardhan223@gmail.com",
+						Password: "memxqpdrlkwwxmet",
+						To: email,
+						From: "singhharshvardhan223@gmail.com",
+						Subject: "Forgot Password Request- Yamunazon.com",
+						Body:
+							`<b><span style='color:purple'>Hello ${name}</span><b><br><div style='color:blue'>Click on this Link to reset your password:</div><br>` +
+							`https://yamunazon.com/CPasswd?w=${_id}<br><br><span style='color:red'>Never share this link with somebody else.</span><br><br>Thanks :)`,
+					}).then((message) => {
+						if (message === "OK") {
+							Swal.fire(
+								"Congratulations",
+								"Details submitted to Registered Email. Please check email for further instructions.",
+								"success"
+							);
+						} else {
+							Swal.fire({
+								icon: "error",
+								title: "Sorry",
+								text: "Something went wrong!",
+								footer: '<a href="https://wa.me/+918279766773" target="_blank">Ask us on WhatsApp</a>',
+							});
+						}
+					});
+				}
+			});
+	};
+	const handleForgInp = (e) => {
+		e.preventDefault();
+		Swal.fire({
+			title: "Enter 10-digit Registered Phone No.",
+			input: "text",
+			inputAttributes: {
+				autocapitalize: "off",
+			},
+			showCancelButton: true,
+			confirmButtonText: "I am sure.",
+			showLoaderOnConfirm: true,
+			preConfirm: (phoneofUser) => {
+				if (phoneofUser && phoneofUser.length == 10) {
+					handleForgotEmail(phoneofUser);
+				} else {
+					alert(
+						"Invalid Phone, Please Enter 10 digit long, registered phone No."
+					);
+				}
+			},
+			allowOutsideClick: () => {
+				false;
+			} /*!Swal.isLoading()*/,
+			backdrop: true,
+		});
+	};
 	return (
 		<div>
 			<Head>
@@ -107,10 +180,20 @@ const User_Login = () => {
 						id="exampleInputPassword1"
 					/>
 				</div>
-
-				<button type="submit" className="btn btn-dark">
-					Log In
-				</button>
+				<div>
+					<button type="submit" className="btn btn-dark">
+						Log In
+					</button>
+					<span style={{ marginLeft: "70px" }}></span>
+					<button
+						className="btn btn-warning"
+						onClick={(e) => {
+							handleForgInp(e);
+						}}
+					>
+						Forgot Password?
+					</button>
+				</div>
 				<div style={{ marginTop: "20px" }}></div>
 				<p>
 					<Link href="/User_Register">

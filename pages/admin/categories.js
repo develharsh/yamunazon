@@ -31,7 +31,7 @@ const Categories = ({ categories }) => {
 	const propList = categories.map((category) => {
 		return (
 			<tr key={category._id}>
-				<th>{category.title.substring(0, 20)}...</th>
+				<th>{category.title}</th>
 
 				<td>
 					<Link href={`/admin/category/edit/${category._id}`}>
@@ -63,7 +63,7 @@ const Categories = ({ categories }) => {
 					</a>
 				</Link>
 			</div>
-			<div className="container">
+			<div className="container" style={{overflow:'auto'}}>
 				<table className="table table-striped">
 					<thead>
 						<tr>

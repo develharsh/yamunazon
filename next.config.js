@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    BASE_URL: "https://yamunazon.vercel.app",
+    BASE_URL: "http://localhost:3000",
     MONGODB_URL:
       "mongodb+srv://hvs:thakur@cluster0.sjxbo.mongodb.net/yamuzazondb?retryWrites=true&w=majority",
     ACCESS_TOKEN_SECRET:

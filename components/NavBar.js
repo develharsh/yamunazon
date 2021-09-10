@@ -88,24 +88,26 @@ const NavBar = () => {
 								<>
 									<li className="nav-item">
 										<Link href="/admin/products">
-											<a className="nav-link">Admin-Products</a>
+											<a className="nav-link">Admin Products</a>
 										</Link>
 									</li>
 									<li className="nav-item">
 										<Link href="/admin/categories">
-											<a className="nav-link">Admin-Categories</a>
+											<a className="nav-link">Admin Categories</a>
 										</Link>
 									</li>
 									<li className="nav-item">
 										<Link href="/admin/users">
-											<a className="nav-link">Admin-Users</a>
+											<a className="nav-link">Admin Users</a>
 										</Link>
 									</li>
 								</>
 							)}
-							<li className="nav-item" hidden>
-								<Link href="/My_Cart">
-									<a className="nav-link">Categories</a>
+							<li className="nav-item">
+								<Link href="/AllCats">
+									<a className={"nav-link" + isActive("/AllCats")}>
+										Categories
+									</a>
 								</Link>
 							</li>
 							<li className="nav-item">

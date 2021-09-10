@@ -13,7 +13,7 @@ const AddProd = ({ categories }) => {
 		title: "",
 		price: "",
 		description: "",
-		category: "",
+		category: categories[0]._id,
 	};
 	const [prodData, setProdData] = useState(initialState);
 	const [available, setAvail] = useState(true);
@@ -36,8 +36,7 @@ const AddProd = ({ categories }) => {
 			!img1 ||
 			!img2 ||
 			!img3 ||
-			!img4 ||
-			!category
+			!img4
 		) {
 			return dispatch({
 				type: "NOTIFY",
@@ -67,7 +66,7 @@ const AddProd = ({ categories }) => {
 			type: "NOTIFY",
 			payload: { success: "Successfully, Uploaded." },
 		});
-		router.push("/admin/products");
+		//router.push("/admin/products");
 	};
 
 	const catList = categories.map((category) => {

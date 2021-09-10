@@ -42,7 +42,7 @@ const Products = ({ products }) => {
 				</th>
 				<td>
 					<Link href={`/product/${product._id}`}>
-						<a target="_blank">{product.title.substring(0, 14)}...</a>
+						<a target="_blank">{product.title}</a>
 					</Link>
 				</td>
 				<td>
@@ -54,7 +54,7 @@ const Products = ({ products }) => {
 					<span style={{ marginLeft: "20px" }}></span>
 					<i
 						className="far fa-trash-alt text-danger"
-						style={{cursor:'pointer'}}
+						style={{ cursor: "pointer" }}
 						onClick={() => {
 							deleteProduct(product._id, product.title);
 						}}
@@ -90,7 +90,7 @@ const Products = ({ products }) => {
 };
 
 export async function getServerSideProps(context) {
-	const { req, res } = context;
+	const { req, res, query } = context;
 	try {
 		const { power } = jwt.verify(
 			req.cookies.tokenAuth,
@@ -101,7 +101,8 @@ export async function getServerSideProps(context) {
 		res.writeHead(302, { Location: "/My_Cart" });
 		res.end();
 	}
-	const ress = await fetch(`${process.env.BASE_URL}/api/products`);
+
+	const ress = await fetch(`${process.env.BASE_URL}/api/products?c=${query.c}`);
 	const data = await ress.json();
 	return {
 		props: { products: data }, // will be passed to the page component as props

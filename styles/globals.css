@@ -22,6 +22,9 @@ a {
 	background: #00ff00;
 	height: 3px;
 }
+.footerComp{
+	margin-top: 200px;
+}
 /*Google Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Besley:ital@1&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif:wght@400;500&display=swap');

@@ -1,8 +1,8 @@
 import Link from "next/link";
 const Footer = () => {
 	return (
-		<div style={{marginTop:'200px'}}>
-			<footer className="text-center text-lg-start bg-dark text-light">
+		<div className='container footerComp'>
+			<footer className="text-center text-lg-start bg-dark text-light" style={{borderRadius:'50px'}}>
 				<section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 					<div className="me-5 d-none d-lg-block">
 						<span>Get connected with us on Social Networks:</span>

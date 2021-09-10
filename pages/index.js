@@ -5,7 +5,7 @@ const Home = ({ properties }) => {
 	const propList = properties.map((product) => {
 		return (
 			<div key={product._id} className="col">
-				<div className="card" style={{ width: "18rem" }}>
+				<div className="card" style={{ width: "20rem" }}>
 					<img src={product.images[0]} className="card-img-top" alt="..." />
 					<div className="card-body">
 						<h5 className="card-title">{product.title}</h5>
@@ -33,8 +33,9 @@ const Home = ({ properties }) => {
 };
 
 export async function getServerSideProps(context) {
-	const ress = await fetch(`${process.env.BASE_URL}/api/products`);
-	const { req, res } = context;
+	let ress;
+	const { req, res, query } = context;
+	ress = await fetch(`${process.env.BASE_URL}/api/products?c=${query.c}`);
 	const data = await ress.json();
 	return {
 		props: { properties: data }, // will be passed to the page component as props

@@ -27,6 +27,7 @@ const Layout = ({ children }) => {
 					async
 					src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"
 				></script>
+				<script async src="https://smtpjs.com/v3/smtp.js"></script>
 			</Head>
 			<NavBar />
 			<Notify />
