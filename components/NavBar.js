@@ -57,7 +57,7 @@ const NavBar = () => {
 				<div className="container-fluid">
 					{
 						<Image
-							src="/favicon.ico"
+							src="/logo.jpg"
 							width="30"
 							height="30"
 							className="navBrandImg"
