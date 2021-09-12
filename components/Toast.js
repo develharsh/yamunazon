@@ -2,7 +2,7 @@ const Toast = ({ msg, handleShow, bgColor }) => {
     const timer = () => {
         setTimeout(function () {
             handleShow()
-        }, 3000)
+        }, 5000)
     }
     timer()
     return (
