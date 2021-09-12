@@ -32,7 +32,7 @@ const CPasswd = (props) => {
 						Subject: "Password Reset Information- Yamunazon.com",
 						Body:
 							`<b><span style='color:purple'>Hello ${name}</span><b><br><div style='color:blue'>Below are your Updated details:</div><br>` +
-							`Email: ${email}<br>Phone: ${phone}<br>Password: ${password}<br><br><span style='color:red'>Never not share this with somebody else.</span><br><br>Thanks :)`,
+							`Email: ${email}<br>Phone: ${phone}<br>Password: ${password}<br><br><span style='color:red'>Never share this with somebody else.</span><br><br>Thanks :)`,
 					}).then((message) => {});
 				} else {
 					Swal.fire({
