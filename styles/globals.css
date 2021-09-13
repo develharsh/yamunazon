@@ -24,8 +24,10 @@ a {
 }
 #nprogress .spinner-icon {
   border-top-color: #00ff00;
+  border-bottom-color: #00ff00;
+  border-right-color: #00ff00;
   border-left-color: #000;
-  height:30px;
+  height:25px;
 }
 .footerComp{
 	margin-top: 200px;
