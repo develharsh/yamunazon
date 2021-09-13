@@ -25,6 +25,7 @@ a {
 #nprogress .spinner-icon {
   border-top-color: #00ff00;
   border-left-color: #000;
+  height:10px;
 }
 .footerComp{
 	margin-top: 200px;
