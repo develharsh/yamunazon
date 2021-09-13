@@ -5,7 +5,7 @@ import Router from 'next/router'
 import NProgress from 'nprogress'
 
 function MyApp({ Component, pageProps }) {
-  NProgress.configure({ showSpinner: false });
+  //NProgress.configure({ showSpinner: false });
   Router.events.on('routeChangeStart',
     (url) => {
       NProgress.start();
