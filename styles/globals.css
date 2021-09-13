@@ -23,7 +23,8 @@ a {
 	height: 3px;
 }
 #nprogress .spinner-icon {
-  border-top-color: red;
+  border-top-color: #00ff00;
+  border-left-color: #000;
 }
 .footerComp{
 	margin-top: 200px;
