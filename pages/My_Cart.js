@@ -51,7 +51,7 @@ const My_Cart = () => {
 		let data = "ORDER ALERT:";
 		cart.forEach((item) => {
 			data +=
-				"<br>Link: https://yamunazon.com/product/" +
+				"<br>Link: https://yamunazon.com/product?s=" +
 				item._id +
 				"<br>Image: " +
 				item.images[0] +
