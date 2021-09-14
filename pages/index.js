@@ -10,7 +10,7 @@ const Home = ({ properties }) => {
 					<div className="card-body">
 						<h5 className="card-title">{product.title}</h5>
 						<p className="card-text">₹ {product.price}</p>
-						<Link href={`/product/${product._id}`}>
+						<Link href={`/product?s=${product._id}`}>
 							<a target="_blank" className="stretched-link"></a>
 						</Link>
 					</div>
