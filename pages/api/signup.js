@@ -7,7 +7,7 @@ connectDB();
 const Signup = async (req, res) => {
 	const { phone, password, email, name } = req.body;
 	try {
-		const user = await User.findOne({ phone, email });
+		const user = await User.findOne({ phone });
 		if (user) {
 			return res.status(422).json({ fail: "Phone already exists" });
 		}
