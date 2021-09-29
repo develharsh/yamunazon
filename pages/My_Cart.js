@@ -120,7 +120,12 @@ const My_Cart = () => {
 		return (
 			<div>
 				<Head>
-					<title>My Cart | Dusk and Dawn</title>
+					<title>My Cart | Yamunazon</title>
+					<meta
+						name="description"
+						content="www.yamunazon.com, Buy best quality products at affordable price"
+						/>
+						<link rel="shortcut icon" href="/logo.jpg" type="image/x-icon" />
 				</Head>
 				<div>
 					<h2 className="text-center mt-5">
