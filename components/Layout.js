@@ -28,7 +28,6 @@ const Layout = ({ children }) => {
 					src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"
 				></script>
 				<script async src="https://smtpjs.com/v3/smtp.js"></script>
-				<link rel="shortcut icon" href="/logo.jpg" type="image/x-icon" />
 			</Head>
 			<NavBar />
 			<Notify />
