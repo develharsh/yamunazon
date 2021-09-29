@@ -66,6 +66,11 @@ const User_Register = () => {
 		<div>
 			<Head>
 				<title>New User | Yamunazon.com</title>
+				<meta
+						name="description"
+						content="www.yamunazon.com, Buy best quality products at affordable price"
+        			/>
+        			<link rel="shortcut icon" href="/logo.jpg" type="image/x-icon" />
 			</Head>
 			<form className="User_Register_Form" onSubmit={handleSubmit}>
 				<h4 className="UserLogRegtext">New User</h4>
