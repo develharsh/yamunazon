@@ -148,6 +148,11 @@ const User_Login = () => {
 		<div>
 			<Head>
 				<title>Log In | Yamunazon.com</title>
+				<meta
+					name="description"
+					content="www.yamunazon.com, Buy best quality products at affordable price"
+        			/>
+        			<link rel="shortcut icon" href="/logo.jpg" type="image/x-icon" />
 			</Head>
 			<form className="User_Login_Form" onSubmit={handleSubmit}>
 				<h4 className="UserLogRegtext">Log In</h4>
