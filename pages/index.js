@@ -24,6 +24,11 @@ const Home = ({ properties }) => {
 		<div>
 			<Head>
 				<title>Home | Yamunazon.com</title>
+				<meta
+          			name="description"
+          			content="www.yamunazon.com, Buy best quality products at affordable price"
+        			/>
+        			<link rel="shortcut icon" href="/logo.jpg" type="image/x-icon" />
 			</Head>
 			<div className="container px-4">
 				<div className="row gx-5">{propList}</div>
