@@ -18,6 +18,11 @@ const AllCats = ({ categories }) => {
 		<div>
 			<Head>
 				<title>All Categories | Yamunazon.com</title>
+				<meta
+          			name="description"
+          			content="www.yamunazon.com, Buy best quality products at affordable price"
+        			/>
+        			<link rel="shortcut icon" href="/logo.jpg" type="image/x-icon" />
 			</Head>
 			<div>
 				<hr></hr>
